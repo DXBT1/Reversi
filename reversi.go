@@ -23,9 +23,3 @@ func (b *Board) get(x, y int) string {
 	}
 	return "other"
 }
-
-func main() {
-	b := &Board{
-		tokens: []int{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	}
-}
