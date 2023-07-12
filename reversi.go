@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Board struct {
 	tokens []int
 }
@@ -22,4 +24,12 @@ func (b *Board) get(x, y int) string {
 		return "●"
 	}
 	return "other"
+}
+
+func main() {
+	list := []int{0, 0, 0, 0, 0, 1, -1, 0, 0, -1, 1, 0, 0, 0, 0, 0}
+	fmt.Println(list[0:4])
+	fmt.Println(list[4:8])
+	fmt.Println(list[8:12])
+	fmt.Println(list[12:16])
 }
