@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type Board struct {
-	tokens []int
+	tokens [][]int
 }
 
 func (b *Board) put(x, y int, u string) {
@@ -24,6 +24,30 @@ func (b *Board) get(x, y int) string {
 		return "●"
 	}
 	return "other"
+}
+
+func input() (int, int) {
+	var n [2]int
+	fmt.Scan(&n[0], &n[1])
+	return n[0], n[1]
+}
+
+func (b *Board) initial() string {
+	for i < 10 {
+		for j < 10 {
+			if (i == 4 && j == 4) || (i == 5 && j == 5) {
+				b.tokens[i][j] == 1
+			} else if (i == 5 && j == 4) || (i == 4 && j == 5) {
+				b.tokens[i][j] == -1
+			} else if i == 0 || j == 0 || i == 9 || j == 9 {
+				b.tokens[i][j] == 2
+			} else {
+				b.tokens[i][j] == 0
+			}
+
+		}
+	}
+
 }
 
 func main() {
