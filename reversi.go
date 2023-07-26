@@ -118,9 +118,9 @@ func hasValidMove(b *Board, player_now int) bool {
 
 func main() {
 	board := initialize()
-	board.PrintBoard()
 	player := 1
 	for {
+		board.PrintBoard()
 		x, y := input()
 		judge := board.isMovable(x, y)
 		if judge == "reject" {
@@ -129,6 +129,10 @@ func main() {
 		}
 		// filpped := [][]int{}
 		flipped := board.getFlippedDiscs(x, y, player)
+		if len(flipped) == 0 {
+			fmt.Println("again")
+			continue
+		}
 		board.tokens[x][y] = player
 		for _, disc := range flipped {
 			board.tokens[disc[0]][disc[1]] = player
